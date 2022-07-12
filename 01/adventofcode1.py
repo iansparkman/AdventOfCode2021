@@ -9,7 +9,7 @@
 # https://adventofcode.com/2021/day/1
 
 # open file containing data to look at (make sure file is in same directory as this program)
-file = open("data.txt", "r", encoding="utf-8")
+file = open("01/data.txt", "r", encoding="utf-8")
 
 # stick that info in a variable called data
 data = file.read().splitlines()
