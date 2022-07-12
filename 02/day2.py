@@ -10,6 +10,7 @@ data = data.read().splitlines()
 # make data a list, and for each item in the data, split that into two components which themselves are a list
 # this is technically an array, a list of lists where each list item is a list of strings, like:
 # [ ['forward', '4'] , ['forward', '8'] , ['down', '2'] , ... , ['up', '3'] ]
+# also, this is a weird but super compact way to create lists by running through a decent-sized piece of data
 data = [x.split() for x in data]
 
 # this one is a little tricky...

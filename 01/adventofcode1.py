@@ -18,15 +18,16 @@ data = file.read().splitlines()
 depths = [int(x) for x in data]
 
 # the number of increases is the sum of the number of times that one item is less than the next--
+# zip is a super handy built-in python feature, definitely look it up for more detail
 increases = sum(x < y for x, y in zip(depths, depths[1:]))
 
 print("the number of single-measurement depth increases is : " + str(increases))
 
 ########################################################################################################
 
-# part two! check the number of times this increasing thing happens, but between sliding sindows of three measurements
+# part two! check the number of times this increasing thing happens, but between sliding windows of three measurements.
 # conveniently, the equivalent of: depths[n] + depths[n+1] + depths[n+2] < depths[n+1] + depths[n+2] + depths[n+3]
-# is just: depths[n] < depths[n+3]
+# is just: depths[n] < depths[n+3] ... thank you math
 # so we just need to compare each measurement to the one two away rather than the one right next to it
 
 increases_window = sum(x < y for x, y in zip(depths, depths[3:]))
